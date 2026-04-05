@@ -2,9 +2,9 @@
 
 ## About
 
-This repository contains the code for the system for the paper: Reproducing UI Scenarios Described in App Reviews with Large Language Models
+This repository contains the code for the system for the paper: Reproducing UI Contexts Described in App Reviews with Large Language Models
 
-LLMARE is a LLM-based system for reproducing user-described scenarios in app reviews. It can automatically reproduce the scenarios described in user reviews, and save screenshots of the reproduction process along with records of the executed actions and other related information.
+LLMARE is a LLM-based system for reproducing user-described contexts in app reviews. It can automatically reproduce the contexts described in user reviews, and save screenshots of the reproduction process along with records of the executed actions and other related information.
 
 ## About the project
 
@@ -67,10 +67,10 @@ Organization of the Dataset:
 - gpt: gpt.py stores functions for interacting with the large language model.
 - scripts:
   - commands.py: This file saves some instructions and examples needed to interact with the large language model during the test.
-  - comment.py: This file is a script file that implements the entire process of reproducing the user-described scenario, corresponding to the functions of LLMARE in the target identfication stage and scenario reproduction stage.
+  - comment.py: This file is a script file that implements the entire process of reproducing the user-described context, corresponding to the functions of LLMARE in the target identfication stage and context reproduction stage.
   - explore.py: This script summarizes each state and activity based on the viewtree file of the page, corresponding to the functions of LLMARE in the pre-exploration stage. The output files after the script is executed include activity_function.json,page_html.json,activity_task.json,state_task.json.
   - tools.py: This file holds functions such as converting the viewtree into HTML representation, comparing page similarities, and taking screenshots etc.
-  - generate_comments.py: This script is used to determine whether the scenario described in the user's comment is reproducible and extract the corresponding key information. Its output files is comment.xlsx.
+  - generate_comments.py: This script is used to determine whether the context described in the user's comment is reproducible and extract the corresponding key information. Its output files is comment.xlsx.
 - LLMARE_data.xlsx: All the data and results we used for testing were from 20 user reviews per app.
 - Baselines_data.xlsx:  Results for step-by-step method, AppAgent and ReBL.
 - LLMARE_gpt_oss_data.xlsx: Results for LLMARE with gpt-oss-120b.
@@ -97,7 +97,7 @@ Organization of the Dataset:
 - You can ensure that the target application is started by modifying the key value in the **capabilities variable** in comment.py.
 - Select **the file where the test user's reviews are saved** through line 89 of comment.py
 - You can use the parameter **"max_actions"** to set the maximum number of actions to be performed during the reproduction process for each user comment.
-- You can set **the number of repetitions** for each UI Scenario by modifying the judgment statement on line 231 of comment.py. For example, "is_finished < 3" means repetition 3 times.
+- You can set **the number of repetitions** for each UI Context by modifying the judgment statement on line 231 of comment.py. For example, "is_finished < 3" means repetition 3 times.
 
 **3.Start Appium**
 
